@@ -1,6 +1,6 @@
 const NETWORK = {
   eth: "eth",
-  sol: "sol",
+  // sol: "sol",
 };
 
 module.exports = {
