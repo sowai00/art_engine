@@ -5,9 +5,10 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
+const namePrefix = "Asia Crypto Girls (ACG)";
+const description =
+  "Asia Crypto Girls (ACG) is a Naffiti NFT collection that recognises and celebrates the talented, beautiful and empowered female artists in Asia. Harmful stereotypes have long been plaguing the entertainment industry, especially in Asia. The dreams of many talented female performers are often withheld just because of the many labels that the society has placed on them. ACG’s aim is to provide a platform for the girls to show their true colours and to utilise the force of web 3.0 to create a community in metaverse where they can connect with their supporters and shine. This evolving collection of ACG DAO passes will be your ticket to the most authentic, compelling and groundbreaking Asian NFT community and many more exciting projects in the coming future.";
+const baseUri = "ipfs://QmPQBiFcGv2hHRSYeGjRqQuPv9G1yjd7NYG58yihmt9fGq";
 
 const solanaMetadata = {
   symbol: "YC",
@@ -23,17 +24,33 @@ const solanaMetadata = {
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
+  // {
+  //   growEditionSizeTo: 10,
+  //   layersOrder: [
+  //     { name: "Background" },
+  //     { name: "Eyeball" },
+  //     { name: "Eye color" },
+  //     { name: "Iris" },
+  //     { name: "Shine" },
+  //     { name: "Bottom lid" },
+  //     { name: "Top lid" },
+  //   ],
+  // },
   {
-    growEditionSizeTo: 10,
-    layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
-    ],
+    growEditionSizeTo: 30,
+    layersOrder: [{ name: "Artist" }, { name: "Rank" }, { name: "R" }],
+  },
+  {
+    growEditionSizeTo: 44,
+    layersOrder: [{ name: "Artist" }, { name: "Rank" }, { name: "SR" }],
+  },
+  {
+    growEditionSizeTo: 48,
+    layersOrder: [{ name: "Artist" }, { name: "Rank" }, { name: "SS" }],
+  },
+  {
+    growEditionSizeTo: 49,
+    layersOrder: [{ name: "Artist" }, { name: "Rank" }, { name: "SSS" }],
   },
 ];
 
@@ -42,8 +59,8 @@ const shuffleLayerConfigurations = true;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 886,
+  height: 886,
   smoothing: false,
 };
 

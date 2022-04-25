@@ -46,7 +46,7 @@ const buildSetup = () => {
 };
 
 const getRarityWeight = (_str) => {
-  let nameWithoutExtension = _str.slice(0, -4);
+  let nameWithoutExtension = _str.slice(0, -5);
   var nameWithoutWeight = Number(
     nameWithoutExtension.split(rarityDelimiter).pop()
   );
@@ -63,7 +63,7 @@ const cleanDna = (_str) => {
 };
 
 const cleanName = (_str) => {
-  let nameWithoutExtension = _str.slice(0, -4);
+  let nameWithoutExtension = _str.slice(0, -5);
   var nameWithoutWeight = nameWithoutExtension.split(rarityDelimiter).shift();
   return nameWithoutWeight;
 };
@@ -112,8 +112,8 @@ const layersSetup = (layersOrder) => {
 
 const saveImage = (_editionCount) => {
   fs.writeFileSync(
-    `${buildDir}/images/${_editionCount}.png`,
-    canvas.toBuffer("image/png")
+    `${buildDir}/images/${_editionCount}.jpeg`,
+    canvas.toBuffer("image/jpeg")
   );
 };
 
@@ -133,13 +133,13 @@ const addMetadata = (_dna, _edition) => {
   let tempMetadata = {
     name: `${namePrefix} #${_edition}`,
     description: description,
-    image: `${baseUri}/${_edition}.png`,
-    dna: sha1(_dna),
+    image: `${baseUri}/${_edition}.jpeg`,
+    // dna: sha1(_dna),
     edition: _edition,
-    date: dateTime,
+    // date: dateTime,
     ...extraMetadata,
     attributes: attributesList,
-    compiler: "HashLips Art Engine",
+    compiler: "www.naffiti.com",
   };
   if (network == NETWORK.sol) {
     tempMetadata = {
